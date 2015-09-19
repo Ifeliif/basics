@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+	background-color: #white;
+	color: black;
+	margin: 0; padding: 0;
+	font-family: Meiryo, sans-serif;
+}
+
+a:link { color: #00c; }
+a:visited { color: #00c; }
+a:hover { color:#ccf; }
+a img { border: none; }
+
+div#container{
+	margin: 0 auto;
+	padding-top: 5px;
+	width: 950px;
+}
+
+div#content{
+	float: left;
+	width: 700px;
+	background-color: #ffdd99;
+	padding: 10px 10px 10px 0;
+}
+div#sidebar{
+	float: right;
+	width: 230px;
+	background-color: #e8ffff;
+	padding: 5px;
+	font-size: 86%;
+}
+
+h1{
+	color: #660066;
+}
+h2{
+	color: #660066;
+}
+
+div.field_with_errors{
+	background-color: #f00;
+	padding: 2px;
+}
+
+
+
+div.menubar a{ text-decoration:none; }
+
+div.menubar a:link{ color: #ccc; }
+
+div.menubar a:visited{ color: #ccc ; }
