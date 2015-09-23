@@ -8,6 +8,10 @@ class Article < ActiveRecord::Base
     where("released_at <= ? AND (? < expired_at OR expired_at IS NULL ) ", now , now)
    }
   
+   scope :readable_for, ->(member){
+     member ? all : where(member_only: false)
+   }
+  
   
   
   
@@ -19,10 +23,7 @@ class Article < ActiveRecord::Base
   def no_expiration=(val)
     @no_expiration = val.in?([true,  1, "1"])
   end
-  
-  
-  
-  
+
   
   private
   def check_expired_at
@@ -36,8 +37,8 @@ class Article < ActiveRecord::Base
   end
   
   class << self
-    def sidebar_articles(num = 5)
-      open.order(released_at: :desc).limit(num)
+    def sidebar_articles(member, num = 5)
+      open.readable_for(member).order(released_at: :desc).limit(num)
     end
   end
   

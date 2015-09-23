@@ -8,6 +8,7 @@ class CreateMembers < ActiveRecord::Migration
       t.date :birthday
       t.integer :gender, null: false, default: 0
       t.boolean :administrator, null: false, default: false
+      t.string :hashed_password
       
       t.timestamps
     end
